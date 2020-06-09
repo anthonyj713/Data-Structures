@@ -22,6 +22,7 @@ class Queue:
     def __init__(self):
         self.size = 0
         self.storage = LinkedList()
+        # self.storage = []
     
     def __len__(self):
         return self.size

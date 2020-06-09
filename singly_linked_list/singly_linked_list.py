@@ -48,8 +48,6 @@ class LinkedList:
             return None
         # save the tail Node's data
         data = self.tail.get_value()
-        # set self.tail to none
-        self.tail = None
         # both head and tail refer to the same Node
         # there's only one Node in the linked list
         if self.head is self.tail:
