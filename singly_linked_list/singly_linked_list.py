@@ -1,5 +1,5 @@
 class Node:
-    def __init(self, value, next=None):
+    def __init__(self, value, next=None):
         self.value = value
         self.next_node = next
 
@@ -48,6 +48,8 @@ class LinkedList:
             return None
         # save the tail Node's data
         data = self.tail.get_value()
+        # set self.tail to none
+        self.tail = None
         # both head and tail refer to the same Node
         # there's only one Node in the linked list
         if self.head is self.tail:
@@ -69,6 +71,7 @@ class LinkedList:
 
             # current is now pointing at the Node right 
             # before the tail Node
+            self.tail = None
             self.tail = current
 
         return data
@@ -133,9 +136,11 @@ class LinkedList:
 
         while current is not None:
             if current.get_value() > max_so_far:
-                max_so_far = current.get_next()
+                max_so_far = current.get_value()
 
-            return max_so_far
+            current = current.get_next()
+       
+        return max_so_far
 
 
 
